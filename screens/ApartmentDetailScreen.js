@@ -1,14 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import { View, Text, StyleSheet, Image, TouchableOpacity, ScrollView, Alert } from 'react-native';
 import axios from 'axios';
-import { useNavigation, useRoute } from '@react-navigation/native'; // Import useRoute from react-navigation/native
+import { useNavigation, useRoute } from '@react-navigation/native';
 
+//Apartment details page
 const ApartmentDetailScreen = () => {
   const navigation = useNavigation();
-  const route = useRoute(); // Use useRoute hook to access route parameters
+  const route = useRoute();
   const [apartment, setApartment] = useState(null);
-  const apartmentId = route.params?.id; // Get the id passed via navigation parameters
+  const apartmentId = route.params?.id;
 
+  //fetching data from backend
   useEffect(() => {
     const fetchApartmentDetails = async () => {
       try {
@@ -55,13 +57,13 @@ const styles = StyleSheet.create({
     },
     image: {
       width: '100%',
-      height: 300, // Static height, adjust as needed
+      height: 300,
       borderRadius: 6,
       marginBottom: 20,
     },
     description: {
       fontSize: 16,
-      lineHeight: 24, // Approximation of line-height: 1.6 in React Native
+      lineHeight: 24,
       color: '#666',
       marginBottom: 10,
     },
@@ -70,16 +72,16 @@ const styles = StyleSheet.create({
       fontWeight: 'bold',
       color: '#007BFF',
       paddingVertical: 10,
-      paddingHorizontal: 0, // No horizontal padding needed for inline-block style
+      paddingHorizontal: 0,
       backgroundColor: '#ffffff',
       borderRadius: 5,
-      marginBottom: 20, // Add some margin bottom for spacing
+      marginBottom: 20,
     },
     backButton: {
       backgroundColor: '#007bff',
       padding: 12,
       borderRadius: 5,
-      alignSelf: 'flex-start', // Align button to the start (left)
+      alignSelf: 'flex-start',
       marginTop: 20,
       shadowColor: '#000',
       shadowOffset: {

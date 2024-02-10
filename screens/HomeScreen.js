@@ -3,9 +3,11 @@ import { View, Text, StyleSheet, FlatList, TouchableOpacity, Image } from 'react
 import axios from 'axios';
 import { useFocusEffect } from '@react-navigation/native';
 
+//main listing page
 const HomeScreen = ({ navigation }) => {
   const [apartments, setApartments] = useState([]);
 
+  //fetching data from backend
   const fetchApartments = async () => {
     try {
       const response = await axios.get('http://10.0.2.2:3001/apartments');
@@ -49,24 +51,24 @@ const HomeScreen = ({ navigation }) => {
 
 const styles = StyleSheet.create({
   addButton: {
-    backgroundColor: '#007bff', // Example blue color
+    backgroundColor: '#007bff',
     paddingVertical: 10,
     paddingHorizontal: 20,
     borderRadius: 5,
-    alignSelf: 'center', // Center button horizontally
+    alignSelf: 'center',
     marginTop: 10,
-    marginBottom: 20, // Add some margin at the top
-    shadowColor: '#000', // Shadow for iOS
+    marginBottom: 20,
+    shadowColor: '#000',
     shadowOffset: {
       width: 0,
       height: 2,
     },
     shadowOpacity: 0.25,
     shadowRadius: 3.84,
-    elevation: 5, // Shadow for Android
+    elevation: 5,
   },
   addButtonText: {
-    color: '#ffffff', // White color for the text
+    color: '#ffffff',
     fontSize: 16,
     fontWeight: 'bold',
     textAlign: 'center',

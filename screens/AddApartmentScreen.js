@@ -3,6 +3,7 @@ import { View, Text, TextInput, Button, StyleSheet, Alert } from 'react-native';
 import axios from 'axios';
 import * as ImagePicker from 'expo-image-picker';
 
+//Add apartment page
 const AddApartmentScreen = ({ navigation }) => {
   const [formData, setFormData] = useState({
     title: '',
@@ -16,6 +17,7 @@ const AddApartmentScreen = ({ navigation }) => {
     setFormData({ ...formData, [name]: value });
   };
 
+  //image picker function
   const pickImage = async () => {
     let result = await ImagePicker.launchImageLibraryAsync({
       mediaTypes: ImagePicker.MediaTypeOptions.Images,
@@ -31,7 +33,7 @@ const AddApartmentScreen = ({ navigation }) => {
     }
   };
   
-
+  // handle submit and fetching data from backend
   const handleSubmit = async () => {
     const data = new FormData();
     Object.entries(formData).forEach(([key, value]) => {

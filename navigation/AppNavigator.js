@@ -6,6 +6,7 @@ import ApartmentDetailScreen from '../screens/ApartmentDetailScreen';
 
 const Stack = createNativeStackNavigator();
 
+//Application navigator
 function AppNavigator() {
   return (
     <Stack.Navigator>
